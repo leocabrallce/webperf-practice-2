@@ -11,7 +11,7 @@ const contactRouter = require('./routes/client/contact');
 const menuRouter = require('./routes/client/menu');
 const newsDetailRouter = require('./routes/client/news-detail');
 const newsRouter = require('./routes/client/news');
-const usersRouter = require('./routes/api/users');
+const reservationsRouter = require('./routes/api/reservation');
 
 const app = express();
 
@@ -38,7 +38,7 @@ app.use('/news-detail', newsDetailRouter);
 app.use('/news', newsRouter);
 
 // API routes
-app.use('/api/users', usersRouter);
+app.use('/api/reservations', reservationsRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
