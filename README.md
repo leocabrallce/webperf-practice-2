@@ -1,10 +1,10 @@
-
-* Add routes + .
-* tsx files for individual pages (Home, Story, Menu, Our Updates, Contact) from the template
-* 
-* Use built-in capabilities:
-* - Image component (at least for the “Special Menus” block)
-* - Code splitting (routing and `<Link>` components for menu)
-* And API endpoint (POST to /api/reserve) to save data from reservations (send to [https://httpbin.org/](https://httpbin.org/) )
-* Setup deployment to Vercel
-* Add readme file explaining what was done + commit + push
+- Add routes + .
+- tsx files for individual pages (Home, Story, Menu, Our Updates, Contact) from the template
+- Use built-in capabilities:
+- - Image component (“Special Menus” block)
+- - Code splitting (routing and `<Link>` components for menu)
+- Shared navbar and footer between pages
+- Added native HTML `dialog` element for the reservation form
+- And API endpoint (POST to /api/reserve) to save data from reservations (send to [https://httpbin.org/](https://httpbin.org/) )
+- Setup deployment to Vercel ([https://webperf-practice-2-sand.vercel.app/](https://webperf-practice-2-sand.vercel.app/))
+- Add readme file explaining what was done + commit + push
