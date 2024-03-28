@@ -4,6 +4,7 @@ import Image from 'next/image';
 
 export default function Cocktails() {
   const [cocktails, setCocktails] = useState([]);
+  const [typing, setTyping] = useState(false);
   const [search, setSearch] = useState('');
   const [timer, setTimer] = useState(null);
 
@@ -14,8 +15,11 @@ export default function Cocktails() {
       clearTimeout(timer);
     }
 
+    if (newValue) setTyping(true);
+
     setTimer(setTimeout(() => {
       fetchCocktails();
+      setTyping(false);
     }, 1000));
   };
 
@@ -24,7 +28,7 @@ export default function Cocktails() {
     const response = await fetch(url);
     const data = await response.json();
 
-    setCocktails(data.drinks);
+    setCocktails(data.drinks || []);
   };
 
   return (
@@ -50,7 +54,7 @@ export default function Cocktails() {
         <div class="overlay"></div>
       </header>
 
-      {cocktails.length > 0 ? (
+      {cocktails.length > 0 && !typing ? (
         <>
           <section className="menu section-padding">
             <div className="container">
@@ -82,6 +86,19 @@ export default function Cocktails() {
 
           <section className="BgImage"></section>
         </>
+      ) : null}
+
+      {cocktails.length === 0 && !typing ? (
+        <section className="menu section-padding">
+          <div className="container">
+            <div className="row">
+
+              <div className="col-12">
+                <h2 className="text-center mb-lg-5 mb-4">No results found for {search}</h2>
+              </div>
+            </div>
+          </div>
+        </section>
       ) : null}
 
       <section className="menu section-padding">
