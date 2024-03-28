@@ -22,6 +22,10 @@ export default function App({ Component, pageProps }) {
       label: 'Menu'
     },
     {
+      href: '/cocktails',
+      label: 'Cocktails'
+    },
+    {
       href: '/news',
       label: 'Our Updates'
     },
